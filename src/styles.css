@@ -81,7 +81,7 @@ section h2 {
   font-size: 3em;
 }
 section.success {
-  background: #18BC9C;
+  background: #1b6d85;
   color: white;
 }
 
@@ -124,6 +124,7 @@ section.success {
   background: none;
   box-shadow: none !important;
   resize: none;
+  color: white;
 }
 .floating-label-form-group label {
   display: block;
@@ -213,9 +214,9 @@ fieldset[disabled] .btn-primary.active {
   background-color: white;
 }
 .btn-success {
-  color: white;
-  background-color: #18BC9C !important;
-  border-color: #18BC9C !important;
+  color: #1b6d85 !important;
+  background-color: white !important;
+  border-color: #2C3E50 !important;
   font-weight: 700;
 }
 .btn-success:hover,
@@ -223,7 +224,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-success:active,
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
-  color: white;
+  color: #1b6d85;
   background-color: #128f76;
   border-color: #11866f;
 }
@@ -247,8 +248,9 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-  background-color: #18BC9C;
-  border-color: #18BC9C;
+  color: #1b6d85;
+  background-color: white;
+  border-color: white;
 }
 .btn-success .badge {
   color: #18BC9C;

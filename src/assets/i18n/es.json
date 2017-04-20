@@ -1,15 +1,22 @@
 {
-  "ABOUT": "About",
+  "ABOUT": "Sobre",
+  "COURSES": "Cursos",
+  "CONTACT": "Contacto",
 
   "ABOUT_COMPANY": "Somos una empresa de carácter global comprometida con el bienestar de las personas. Nos enfocamos en ofrecer soluciones a nuestros clientes, facilitando el acceso a contenidos y aplicaciones de alta calidad que ayuden a tener una mejor vida.",
 
-  "ENGLISH": "English",
-  "PORTUGUESE": "Portuguese",
+  "ENGLISH": "Inglés",
+  "PORTUGUESE": "Portugués",
   "SPANISH": "Español",
 
-  "NAME": "Name",
+  "COURSE_BASIC": "Básico",
+  "COURSE_PREMIUM": "Prima",
+  "COURSE_ADVANTAGE": "Ventaja",
+  "BUY_COURSE": "Comprar Curso",
+
+  "NAME": "Nombre",
   "EMAIL": "Email",
-  "PHONE": "Phone",
-  "MESSAGE": "Message",
-  "SEND": "Send"
+  "PHONE": "Teléfono",
+  "MESSAGE": "Mensaje",
+  "SEND": "Enviar"
 }

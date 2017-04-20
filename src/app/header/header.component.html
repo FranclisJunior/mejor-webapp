@@ -11,7 +11,7 @@
         <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
       </button>
 
-      <a class="navbar-brand" href="#page-top">
+      <a class="navbar-brand" href="#about">
         <img class="img-responsive logo-header" src="assets/img/logo.png">
       </a>
     </div>
@@ -20,10 +20,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="page-scroll">
-          <a pageScroll href="#portfolio">{{ 'ABOUT' | translate }}</a>
+          <a pageScroll href="#about">{{ 'ABOUT' | translate }}</a>
         </li>
         <li class="page-scroll">
-          <a pageScroll href="#curriculum">{{ 'CURRICULUM' | translate }}</a>
+          <a pageScroll href="#courses">{{ 'COURSES' | translate }}</a>
         </li>
         <li class="page-scroll">
           <a pageScroll href="#contact">{{ 'CONTACT' | translate }}</a>
@@ -40,6 +40,10 @@
             <li class="language-item" (click)="setLanguage('english', 'en')"
                 [ngClass]="{'active' : language === 'english'}">
               {{ 'ENGLISH' | translate }}
+            </li>
+            <li class="language-item" (click)="setLanguage('spanish', 'es')"
+                [ngClass]="{'active' : language === 'spanish'}">
+              {{ 'SPANISH' | translate }}
             </li>
             <li class="language-item" (click)="setLanguage('portuguese', 'pt')"
                 [ngClass]="{'active' : language === 'portuguese'}">

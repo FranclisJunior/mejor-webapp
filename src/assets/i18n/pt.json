@@ -1,11 +1,19 @@
 {
-  "ABOUT": "About",
+  "ABOUT": "Sobre",
+  "COURSES": "Cursos",
+  "CONTACT": "Contato",
 
   "ABOUT_COMPANY": "Nos somos uma empresa global comprometida com as pessoas. Nós nos concentramos em fornecer soluções aos nossos clientes, proporcionando acesso a conteúdo de alta qualidade e a aplicações que os ajudam a ter uma vida melhor.",
 
-  "ENGLISH": "English",
+  "ENGLISH": "Inglês",
   "PORTUGUESE": "Portuguese",
   "SPANISH": "Espanhol",
+
+  "COURSE_BASIC": "Básico",
+  "COURSE_PREMIUM": "Prêmio",
+  "COURSE_ADVANTAGE": "Vantagem",
+  "BUY_COURSE": "Comprar Curso",
+
 
   "NAME": "Name",
   "EMAIL": "Email",

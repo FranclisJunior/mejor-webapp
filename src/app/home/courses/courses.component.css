@@ -1,0 +1,41 @@
+.course-premium {
+  border: 1px solid #1b6d85
+}
+
+.course-premium > .panel-heading {
+  background: #1b6d85;
+  color: white;
+}
+
+.course-basic {
+  border: 1px solid dimgray;
+}
+
+.course-basic > .panel-heading {
+  background: dimgray;
+  color: white;
+}
+
+.course-basic > .panel-body {
+  background: #f7f7f7;
+}
+
+.course-desc {
+  min-height: 200px;
+}
+
+.course-price {
+  margin: 0;
+}
+
+.btn-buy {
+  color: white;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-buy:hover {
+  color: white;
+  background-color: #3e8f3e;
+  border-color: #3e8f3e;
+}

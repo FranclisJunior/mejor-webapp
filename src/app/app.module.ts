@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Http, HttpModule, JsonpModule } from '@angular/http';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -10,18 +11,26 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { UtilService } from './util/utl.service';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './home/about/about.component';
+import { ContactComponent} from './home/contact/contact.component';
+import { appRoutes } from './app.router';
+import { CoursesComponent } from './home/courses/courses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    AboutComponent
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     JsonpModule,
     Ng2PageScrollModule.forRoot(),
@@ -32,6 +41,7 @@ import { AboutComponent } from './about/about.component';
         deps: [Http]
       }
     }),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [UtilService],
   bootstrap: [AppComponent]

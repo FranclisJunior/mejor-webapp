@@ -27,23 +27,11 @@ export class HeaderComponent implements OnInit {
     this.translate.setDefaultLang('en');
     this.translate.use('en');
     this.windowListener();
-    this.tests();
   }
 
   setLanguage(language, initial) {
     this.language = language;
     this.translate.use(initial);
-  }
-
-
-  tests() {
-    this.utilService.getActualCountry()
-      .subscribe(
-        data => console.log(data),
-        error => {
-          console.log('Error!', error);
-        }
-      );
   }
 
   windowListener() {

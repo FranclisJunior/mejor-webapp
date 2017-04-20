@@ -1,11 +1,18 @@
 {
   "ABOUT": "About",
+  "COURSES": "Courses",
+  "CONTACT": "Contact",
 
   "ABOUT_COMPANY": "We are a company of global character committed to the welfare of people. We focus on providing solutions to our customers, facilitating access to high quality content and applications that help them to have a better life.",
 
   "ENGLISH": "English",
   "PORTUGUESE": "Portuguese",
   "SPANISH": "Spanish",
+
+  "COURSE_BASIC": "Basic",
+  "COURSE_PREMIUM": "Premium",
+  "COURSE_ADVANTAGE": "Advantage",
+  "BUY_COURSE": "Buy Course",
 
   "NAME": "Name",
   "EMAIL": "Email",

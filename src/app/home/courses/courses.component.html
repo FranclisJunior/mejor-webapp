@@ -1,0 +1,47 @@
+<section id="courses">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>{{'COURSES' | translate}}</h2>
+        <hr class="item-divider item-divider-dark item-divider-star">
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+
+      <div class="col-lg-1"></div>
+      <div class="col-lg-5" *ngFor="let course of courses">
+        <div class="panel"
+             [ngClass]="{'course-basic': course.title === 'COURSE_BASIC', 'course-premium': course.title === 'COURSE_PREMIUM'}">
+          <div class="panel-heading text-center">
+            <h1>{{ course.title| translate}}</h1>
+          </div>
+          <div class="panel-body">
+            <h3 class="text-center course-price">USD $:  {{course.price}}</h3>
+            <hr>
+            <div class="course-desc">
+              <ul>
+                <li *ngFor="let advantage of course.advantages; let $index=index">
+                  {{ advantage | translate }} {{$index+1}}
+                </li>
+              </ul>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="form-group col-xs-12" align="center">
+                <button type="submit" class="btn btn-buy btn-lg">
+                  {{'BUY_COURSE' | translate}}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+  </div>
+
+</section>
