@@ -1,0 +1,93 @@
+<div id="skipnav"><a href="#page-top">Skip to main content</a></div>
+
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom"
+     [ngClass]="{'affix':isShrunk}">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
+      <ul class="list-inline" style="margin: 0">
+        <li>
+          <a href="https://www.facebook.com/junior.galdino.74" target="_blank" class="btn-social btn-outline">
+            <span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/franclis-galdino-da-silva-b8305a96/" target="_blank" class="btn-social btn-outline">
+            <span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/franclisjunior" target="_blank" class="btn-social btn-outline">
+            <span class="sr-only">Github</span><i class="fa fa-fw fa-github-square"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="page-scroll">
+          <a pageScroll href="#portfolio">{{ 'PORTFOLIO' | translate }}</a>
+        </li>
+        <li class="page-scroll">
+          <a pageScroll href="#curriculum">{{ 'CURRICULUM' | translate }}</a>
+        </li>
+        <li class="page-scroll">
+          <a pageScroll href="#contact">{{ 'CONTACT' | translate }}</a>
+        </li>
+        <li class="dropdown toogle-language">
+          <i class="dropdown-toggle" id="selectLanguage" style=" color: white"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span class="toogle-language-icon">
+              <i class="toogle-language-icon fa fa-language fa-2x"></i>
+              <i class="toogle-language-icon caret"></i>
+            </span>
+          </i>
+          <ul class="dropdown-menu" aria-labelledby="selectLanguage">
+            <li class="language-item" (click)="setLanguage('english', 'en')"
+                [ngClass]="{'active' : language === 'english'}">
+              {{ 'ENGLISH' | translate }}
+            </li>
+            <li class="language-item" (click)="setLanguage('portuguese', 'pt')"
+                [ngClass]="{'active' : language === 'portuguese'}">
+              {{ 'PORTUGUESE' | translate }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+  <div class="container" id="page-top" tabindex="-1">
+    <div class="row">
+      <div class="col-lg-12">
+        <img class="img-responsive" src="https://scontent.frec3-2.fna.fbcdn.net/v/t1.0-9/1235055_738383992874064_1562100466279412787_n.jpg?oh=78848013f4aadaea7f76371736b71fd7&oe=5981A688" alt="">
+        <div class="intro-text">
+          <h1 class="name">Franclis Galdino</h1>
+          <hr class="item-divider item-divider-light item-divider-coffee">
+          <span class="skills">Full Stack Developer</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll" *ngIf="isShrunk">
+  <a class="btn btn-primary" pageScroll href="#page-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+</div>

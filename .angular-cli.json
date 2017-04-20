@@ -19,9 +19,17 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../bower_components/bootstrap/dist/css/bootstrap.css",
+        "../bower_components/font-awesome/css/font-awesome.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../bower_components/jquery/dist/jquery.js",
+        "../bower_components/bootstrap/dist/js/bootstrap.js"
+      ],
+      "addons": [
+        "../bower_components/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
