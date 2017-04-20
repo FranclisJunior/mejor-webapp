@@ -1,26 +1,15 @@
 {
-  "PORTFOLIO": "Portfolio",
-  "CURRICULUM": "Curriculum",
-  "ABOUT": "Sobre",
-  "CONTACT": "Contato",
+  "ABOUT": "About",
 
-  "ENGLISH": "Inglês",
-  "PORTUGUESE": "Português",
+  "ABOUT_COMPANY": "Nos somos uma empresa global comprometida com as pessoas. Nós nos concentramos em fornecer soluções aos nossos clientes, proporcionando acesso a conteúdo de alta qualidade e a aplicações que os ajudam a ter uma vida melhor.",
 
-  "NAME": "Nome",
+  "ENGLISH": "English",
+  "PORTUGUESE": "Portuguese",
+  "SPANISH": "Espanhol",
+
+  "NAME": "Name",
   "EMAIL": "Email",
-  "PHONE": "Telefone",
-  "MESSAGE": "Mensagem",
-  "SEND": "Enviar",
-
-  "WORK": "Trabalho",
-  "EDUCATION": "Educação",
-  "PRESENT": "Presente",
-
-  "FIND_ME_ON_WEB": "Encontre-me na web",
-
-  "VIRTUS_EXP_DESC": "Atualmente é full stack developer, desenvolvendo sistemas de informação, trabalhando principalmente com Spring Boot + Angular JS",
-  "EMBEDDED_EXP_DESC": "Embedded System Lab é um laboratório de desenvolvimento de software que recebe financiamento da lei da informática. Trabalhou como desenvolvedor móvel (Android), produzindo aplicativos para a ASUS Brasil",
-  "LAVID_EXP_DESC": "Fez parte da equipe de desenvolvimento do projeto VLibras Web, desenvolvida pela UFPB em parceria com a RNP. Trabalhou com JavaScript, Angular Js 1x, HTML5, CSS3 e Bootstrap",
-  "UFPB_VIRTUAL_EXP_DESC": "Foi tutor na UFPB-Virtual, participando do projeto ProTic (Treinamento para Funcionários Públicos em Melhoria e Gestão de Processos através do uso das TICs)"
+  "PHONE": "Phone",
+  "MESSAGE": "Message",
+  "SEND": "Send"
 }
