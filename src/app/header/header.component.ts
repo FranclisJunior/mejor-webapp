@@ -1,5 +1,6 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {UtilService} from "../util/utl.service";
 
 @Component({
   selector: 'app-header',
@@ -14,23 +15,36 @@ export class HeaderComponent implements OnInit {
 
   private translate: TranslateService;
   private zone: NgZone;
+  private utilService;
 
-  constructor(translate: TranslateService, zone: NgZone) {
+  constructor(translate: TranslateService, zone: NgZone, utilService: UtilService) {
     this.translate = translate;
     this.zone = zone;
+    this.utilService = utilService;
   }
 
   ngOnInit() {
     this.translate.setDefaultLang('en');
     this.translate.use('en');
     this.windowListener();
+    this.tests();
   }
 
-  setLanguage (language, initial) {
+  setLanguage(language, initial) {
     this.language = language;
     this.translate.use(initial);
   }
 
+
+  tests() {
+    this.utilService.getActualCountry()
+      .subscribe(
+        data => console.log(data),
+        error => {
+          console.log('Error!', error);
+        }
+      );
+  }
 
   windowListener() {
     window.onscroll = () => {

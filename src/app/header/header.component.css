@@ -1,46 +1,5 @@
-header {
-  text-align: center;
-  background: #18BC9C;
-  color: white;
-}
-header .container {
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
-header img {
-  display: block;
-  margin: 0 auto 20px;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(70%);
-}
-header .intro-text .name {
-  display: block;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 2em;
-}
-header .intro-text .skills {
-  font-size: 1.25em;
-  font-weight: 300;
-}
-@media (min-width: 768px) {
-  header .container {
-    padding-top: 200px;
-    padding-bottom: 100px;
-  }
-  header .intro-text .name {
-    font-size: 4.75em;
-  }
-  header .intro-text .skills {
-    font-size: 1.75em;
-  }
-}
 .navbar-custom {
-  background: #2C3E50 !important;
+  background: white !important;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -52,6 +11,7 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-brand {
   color: white !important;
+  padding: 0 15px !important;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
@@ -63,58 +23,68 @@ header .intro-text .skills {
   letter-spacing: 1px;
 }
 .navbar-custom .navbar-nav li a {
-  color: white;
+  color: #1b6d85;
 }
 .navbar-custom .navbar-nav li a:hover {
-  color: #18BC9C !important;
+  color: #2C3E50 !important;
 }
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
-  color: white !important;
+  color: #2C3E50 !important;
 }
 .navbar-custom .navbar-nav li.active a {
   color: white;
-  background: #18BC9C;
+  background: #1b6d85;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
   color: white;
-  background: #18BC9C !important;
+  background: #2C3E50 !important;
 }
 .navbar-custom .navbar-toggle {
-  color: white;
+  color: #1b6d85;
   text-transform: uppercase;
   font-size: 10px;
-  border-color: white;
+  border-color: #1b6d85;
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #18BC9C;
+  background-color: #1b6d85;
   color: white;
-  border-color: #18BC9C;
+  border-color: #1b6d85;
 }
 
 .toogle-language {
   margin: 10px 0 0 15px;
   cursor: pointer;
+  color: #1b6d85;
+}
+
+.toogle-language-icon {
+  color: #1b6d85;
 }
 
 .toogle-language-icon:hover, .toogle-language-icon:active {
-  color: #18BC9C;
+  color: #1b6d85;
 }
 
 .language-item {
   padding: 10px 20px;
+  color: #1b6d85;
 }
 
 .language-item:hover {
-  color: #18BC9C;
+  color: #1b6d85;
 }
 
 .language-item.active {
-  background: #18BC9C;
+  background: #1b6d85;
   color: white;
+}
+
+.logo-header {
+  max-height: 40px;
 }
 
 @media (min-width: 768px) {
