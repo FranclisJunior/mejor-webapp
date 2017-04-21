@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UtilService} from '../../util/utl.service';
+import {CoursesService} from './courses.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-courses',
@@ -8,22 +10,24 @@ import {UtilService} from '../../util/utl.service';
 })
 export class CoursesComponent implements OnInit {
 
-  private COUNTRIES_DISCOUNT: Array<string> = ['UY', 'SV', 'PY', 'CL', 'MX', 'CO', 'PE', 'AR', 'CR', 'EC', 'PA', 'BR'];
-
   private utilService: UtilService;
+  private coursesService: CoursesService;
+  private router: Router;
 
   courses: Array<any>;
 
-  constructor(utilService: UtilService) {
+  constructor(utilService: UtilService, coursesService: CoursesService, router: Router) {
     this.utilService = utilService;
+    this.coursesService = coursesService;
+    this.router = router;
   }
 
   ngOnInit() {
-    this.utilService.getActualCountry()
+    this.utilService.getAccessData()
       .subscribe(
         data => {
-          const hasDiscount = this.hasDiscount(data);
-          this.generateCoursesMock(hasDiscount);
+          const discount = this.coursesService.getCourseDiscount(data.country);
+          this.getCourses(discount);
         },
         error => {
           console.log('Error!', error);
@@ -31,26 +35,24 @@ export class CoursesComponent implements OnInit {
       );
   }
 
-  private generateCoursesMock(hasDiscount) {
-    this.courses = [
-      {
-        id: 1,
-        title: 'COURSE_BASIC',
-        advantages: ['COURSE_ADVANTAGE', 'COURSE_ADVANTAGE', 'COURSE_ADVANTAGE', 'COURSE_ADVANTAGE'],
-        price: hasDiscount ? 5.90 : 6.90
-      },
-      {
-        id: 1,
-        title: 'COURSE_PREMIUM',
-        advantages: ['COURSE_ADVANTAGE', 'COURSE_ADVANTAGE', 'COURSE_ADVANTAGE', 'COURSE_ADVANTAGE', 'COURSE_ADVANTAGE',
-          'COURSE_ADVANTAGE', 'COURSE_ADVANTAGE', 'COURSE_ADVANTAGE', 'COURSE_ADVANTAGE', 'COURSE_ADVANTAGE'],
-        price: hasDiscount ? 9.90 : 10.90
-      }
-    ];
+  buyCourse(course) {
+    this.coursesService.setCourse(course);
+    this.router.navigateByUrl('sing-up');
   }
 
-  private hasDiscount(countryCode) {
-    return this.COUNTRIES_DISCOUNT.indexOf(countryCode) > 0;
+  private getCourses(discount) {
+    this.coursesService.getCourses()
+      .subscribe(
+        data => {
+          this.courses = data;
+          for (const course of this.courses) {
+            course.priceDiscount = course.price - discount;
+          }
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 
 }

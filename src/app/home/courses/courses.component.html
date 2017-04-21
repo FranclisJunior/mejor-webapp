@@ -19,7 +19,7 @@
             <h1>{{ course.title| translate}}</h1>
           </div>
           <div class="panel-body">
-            <h3 class="text-center course-price">USD $:  {{course.price}}</h3>
+            <h3 class="text-center course-price">USD $:  {{course.priceDiscount}}</h3>
             <hr>
             <div class="course-desc">
               <ul>
@@ -32,7 +32,8 @@
 
             <div class="row">
               <div class="form-group col-xs-12" align="center">
-                <button type="submit" class="btn btn-buy btn-lg">
+                <button type="submit" class="btn btn-buy btn-lg"
+                        (click)="buyCourse(course)">
                   {{'BUY_COURSE' | translate}}
                 </button>
               </div>

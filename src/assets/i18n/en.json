@@ -12,11 +12,13 @@
   "COURSE_BASIC": "Basic",
   "COURSE_PREMIUM": "Premium",
   "COURSE_ADVANTAGE": "Advantage",
+  "SELECT_COURSE": "Select the Course",
   "BUY_COURSE": "Buy Course",
 
   "NAME": "Name",
   "EMAIL": "Email",
   "PHONE": "Phone",
+  "DATE_BIRTH": "Date Birth",
   "MESSAGE": "Message",
   "SEND": "Send"
 

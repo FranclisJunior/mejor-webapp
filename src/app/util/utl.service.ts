@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http, Jsonp} from '@angular/http';
 
-
 @Injectable()
 export class UtilService {
 
@@ -15,10 +14,11 @@ export class UtilService {
     this.http = http;
   }
 
-  getActualCountry() {
+  getAccessData() {
     return this.http.get(this.API_SERVE)
-      .map(res => JSON.parse(res.text()).country);
+      .map(res => JSON.parse(res.text()));
   };
+
 
   getCountries() {
     return [

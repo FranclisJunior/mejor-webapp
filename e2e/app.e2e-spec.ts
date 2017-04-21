@@ -1,6 +1,6 @@
 import { MejorWebappPage } from './app.po';
 
-describe('mejor-webapp App', () => {
+describe('mejor-webapp App', function() {
   let page: MejorWebappPage;
 
   beforeEach(() => {

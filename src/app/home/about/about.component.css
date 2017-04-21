@@ -38,3 +38,7 @@ header .intro-text .skills {
     font-size: 1.75em;
   }
 }
+
+#about {
+  min-height: 650px;
+}

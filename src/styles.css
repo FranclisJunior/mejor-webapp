@@ -67,6 +67,9 @@ hr.item-divider-coffee:after {
   content: "\f0f4";
 }
 
+hr.item-divider-shop:after {
+  content: "\f07a";
+}
 
 
 .img-centered {
@@ -106,12 +109,17 @@ section.success {
   margin-bottom: 0 !important;
 }
 
+.form-group > .form-control {
+  padding: 0 10px;
+}
+
 .floating-label-form-group {
   position: relative;
   margin-bottom: 0;
   padding-bottom: 0.5em;
   border-bottom: 1px solid #eeeeee;
 }
+.floating-label-form-group select,
 .floating-label-form-group input,
 .floating-label-form-group textarea {
   z-index: 1;
@@ -124,7 +132,6 @@ section.success {
   background: none;
   box-shadow: none !important;
   resize: none;
-  color: white;
 }
 .floating-label-form-group label {
   display: block;
@@ -141,10 +148,6 @@ section.success {
   -moz-transition: top 0.3s ease,opacity 0.3s ease;
   -ms-transition: top 0.3s ease,opacity 0.3s ease;
   transition: top 0.3s ease,opacity 0.3s ease;
-}
-.floating-label-form-group:not(:first-child) {
-  padding-left: 14px;
-  border-left: 1px solid #eeeeee;
 }
 .floating-label-form-group-with-value label {
   top: 0;
@@ -213,21 +216,7 @@ fieldset[disabled] .btn-primary.active {
   color: #2C3E50;
   background-color: white;
 }
-.btn-success {
-  color: #1b6d85 !important;
-  background-color: white !important;
-  border-color: #2C3E50 !important;
-  font-weight: 700;
-}
-.btn-success:hover,
-.btn-success:focus,
-.btn-success:active,
-.btn-success.active,
-.open .dropdown-toggle.btn-success {
-  color: #1b6d85;
-  background-color: #128f76;
-  border-color: #11866f;
-}
+
 .btn-success:active,
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
@@ -308,3 +297,13 @@ div#maincontent {
   outline: none;
 }
 
+input[type="date"]::-webkit-inner-spin-button{
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .floating-label-form-group:not(:first-child) {
+    padding-left: 14px;
+    border-left: 1px solid #eeeeee;
+  }
+}

@@ -10,12 +10,17 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { UtilService } from './util/utl.service';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './home/about/about.component';
 import { ContactComponent} from './home/contact/contact.component';
-import { appRoutes } from './app.router';
 import { CoursesComponent } from './home/courses/courses.component';
+import { SingupComponent } from './singup/singup.component';
+
+
+import { UtilService } from './util/utl.service';
+import { CoursesService } from 'app/home/courses/courses.service';
+
+import { appRoutes } from './app.router';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,8 @@ import { CoursesComponent } from './home/courses/courses.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    CoursesComponent
+    CoursesComponent,
+    SingupComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +49,7 @@ import { CoursesComponent } from './home/courses/courses.component';
     }),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UtilService],
+  providers: [UtilService, CoursesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

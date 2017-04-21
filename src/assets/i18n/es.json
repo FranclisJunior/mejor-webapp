@@ -13,10 +13,12 @@
   "COURSE_PREMIUM": "Prima",
   "COURSE_ADVANTAGE": "Ventaja",
   "BUY_COURSE": "Comprar Curso",
+  "SELECT_COURSE": "Seleccionar el Curso",
 
   "NAME": "Nombre",
   "EMAIL": "Email",
   "PHONE": "Teléfono",
+  "DATE_BIRTH": "Fecha de Nacimiento",
   "MESSAGE": "Mensaje",
   "SEND": "Enviar"
 }

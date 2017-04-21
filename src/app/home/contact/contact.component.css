@@ -1,0 +1,20 @@
+.btn-success {
+  color: #1b6d85 !important;
+  background-color: white !important;
+  border-color: #2C3E50 !important;
+  font-weight: 700;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+  color: #1b6d85;
+  background-color: #128f76;
+  border-color: #11866f;
+}
+
+.floating-label-form-group input,
+.floating-label-form-group textarea {
+  color: white;
+}
