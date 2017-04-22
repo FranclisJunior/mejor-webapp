@@ -16,11 +16,12 @@ import { ContactComponent} from './home/contact/contact.component';
 import { CoursesComponent } from './home/courses/courses.component';
 import { SingupComponent } from './singup/singup.component';
 
-
 import { UtilService } from './util/utl.service';
 import { CoursesService } from 'app/home/courses/courses.service';
+import { SingupService } from './singup/singup.service';
 
 import { appRoutes } from './app.router';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { appRoutes } from './app.router';
     }),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UtilService, CoursesService],
+  providers: [UtilService, CoursesService, SingupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

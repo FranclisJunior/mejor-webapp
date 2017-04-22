@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UtilService} from '../util/utl.service';
 import {CoursesService} from '../home/courses/courses.service';
+import {SingupService} from './singup.service';
 
 @Component({
   selector: 'app-singup',
@@ -12,6 +13,7 @@ export class SingupComponent implements OnInit {
 
   private utilService: UtilService;
   private coursesService: CoursesService;
+  private singupService: SingupService;
 
   user: any = {};
   allCountries: Array<any>;
@@ -19,9 +21,10 @@ export class SingupComponent implements OnInit {
 
   singUpForm: FormGroup;
 
-  constructor(fb: FormBuilder, utilService: UtilService, coursesService: CoursesService) {
+  constructor(fb: FormBuilder, utilService: UtilService, coursesService: CoursesService, singupService: SingupService) {
     this.utilService = utilService;
     this.coursesService = coursesService;
+    this.singupService = singupService;
 
     this.singUpForm = fb.group({
       'name': ['', Validators.compose([Validators.required, Validators.minLength(5)])],
@@ -55,7 +58,15 @@ export class SingupComponent implements OnInit {
   }
 
   buyCourse() {
-
+    this.singupService.createUser(this.user)
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.log('Error!', error);
+        }
+      );
   }
 
   private getAccessData() {

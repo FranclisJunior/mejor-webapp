@@ -1,16 +1,14 @@
-import {Injectable} from '@angular/core';
-import {Http, Jsonp} from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class UtilService {
 
   private API_SERVE = 'http://ipinfo.io/json';
 
-  private jsonp: Jsonp;
   private http: Http;
 
-  constructor(jsonp: Jsonp, http: Http) {
-    this.jsonp = jsonp;
+  constructor(http: Http) {
     this.http = http;
   }
 

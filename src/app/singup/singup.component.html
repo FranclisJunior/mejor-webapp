@@ -13,7 +13,8 @@
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label for="name">{{'NAME' | translate}} *</label>
             <input id="name" type="text" class="form-control" placeholder="{{'NAME' | translate}} *"
-                   ([ngModel])="user.name" [formControl]="singUpForm.controls['name']">
+                   [ngModel]="user.name" (ngModelChange)="user.name = $event"
+                   [formControl]="singUpForm.controls['name']">
           </div>
         </div>
 
@@ -21,13 +22,15 @@
           <div class="form-group col-xs-12 col-lg-6 floating-label-form-group controls">
             <label for="email">{{'EMAIL' | translate}} *</label>
             <input id="email" type="email" class="form-control" placeholder="{{'EMAIL' | translate}} *"
-                   ([ngModel])="user.email" [formControl]="singUpForm.controls['email']">
+                   [ngModel]="user.email" (ngModelChange)="user.email = $event"
+                   [formControl]="singUpForm.controls['email']">
           </div>
 
           <div class="form-group col-xs-12 col-lg-6 floating-label-form-group controls">
             <label for="phone">{{'PHONE' | translate}}</label>
             <input id="phone" type="tel" class="form-control" placeholder="{{'PHONE' | translate}}"
-                   ([ngModel])="user.phone" [formControl]="singUpForm.controls['phone']" >
+                   [ngModel]="user.phone" (ngModelChange)="user.phone = $event"
+                   [formControl]="singUpForm.controls['phone']" >
           </div>
         </div>
 
@@ -36,7 +39,8 @@
           <div class="form-group col-xs-12 col-lg-6 floating-label-form-group controls">
             <label for="date_birth">{{'DATE_BIRTH' | translate}} *</label>
             <input id="date_birth" type="date" class="form-control" placeholder="{{'DATE_BIRTH' | translate}} *"
-                   ([ngModel])="user.date_birth" [formControl]="singUpForm.controls['date_birth']">
+                   [ngModel]="user.date_birth" (ngModelChange)="user.date_birth = $event"
+                   [formControl]="singUpForm.controls['date_birth']">
           </div>
 
           <div class="form-group col-xs-12 col-lg-6  floating-label-form-group controls">
@@ -56,7 +60,7 @@
         <div class="row">
           <h4 class="text-center course-area">{{'SELECT_COURSE' | translate}}</h4>
           <div class="card col-lg-6" *ngFor="let course of allCourses">
-            <div class="panel" [ngClass]="{'active': (course === user.course)}"
+            <div class="panel" [ngClass]="{'active': (user.course && course._id === user.course._id )}"
               (click)="setCourse(course)">
                 <h4 class="text-center">{{ course.title| translate}}</h4>
                 <hr>
@@ -64,7 +68,6 @@
             </div>
           </div>
         </div>
-
 
         <div class="row" align="center">
           <button class="btn btn-buy btn-lg"
