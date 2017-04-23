@@ -1,6 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {UtilService} from '../util/utl.service';
+import {TranslateService} from '@ngx-translate/core';
+import {ToastsManager} from 'ng2-toastr';
+import {Router} from '@angular/router';
+import {UtilService} from '../util/util.service';
 import {CoursesService} from '../home/courses/courses.service';
 import {SingupService} from './singup.service';
 
@@ -11,6 +14,8 @@ import {SingupService} from './singup.service';
 })
 export class SingupComponent implements OnInit {
 
+  private translate: TranslateService;
+  private router: Router;
   private utilService: UtilService;
   private coursesService: CoursesService;
   private singupService: SingupService;
@@ -21,10 +26,15 @@ export class SingupComponent implements OnInit {
 
   singUpForm: FormGroup;
 
-  constructor(fb: FormBuilder, utilService: UtilService, coursesService: CoursesService, singupService: SingupService) {
+  constructor(fb: FormBuilder, vcr: ViewContainerRef, translate: TranslateService, utilService: UtilService,
+              coursesService: CoursesService, singupService: SingupService, router: Router,
+              public toastr: ToastsManager) {
+
+    this.translate = translate;
     this.utilService = utilService;
     this.coursesService = coursesService;
     this.singupService = singupService;
+    this.router = router;
 
     this.singUpForm = fb.group({
       'name': ['', Validators.compose([Validators.required, Validators.minLength(5)])],
@@ -32,6 +42,7 @@ export class SingupComponent implements OnInit {
       'phone': '',
       'date_birth': ['', Validators.required],
     });
+    this.toastr.setRootViewContainerRef(vcr);
   }
 
   ngOnInit() {
@@ -61,10 +72,13 @@ export class SingupComponent implements OnInit {
     this.singupService.createUser(this.user)
       .subscribe(
         data => {
-          console.log(data);
+          this.translate.get('THANK_YOU', {client: this.user.name}).subscribe((res: string) => {
+            this.toastr.success(res, 'Success');
+            this.backToHome();
+          });
         },
         error => {
-          console.log('Error!', error);
+          this.toastr.error(error, 'Error');
         }
       );
   }
@@ -80,7 +94,7 @@ export class SingupComponent implements OnInit {
           this.getCourses(discount);
         },
         error => {
-          console.log('Error!', error);
+          this.toastr.error(error, 'Error');
         }
       );
   }
@@ -95,9 +109,15 @@ export class SingupComponent implements OnInit {
           }
         },
         error => {
-          console.log(error);
+          this.toastr.error(error, 'Error');
         }
       );
+  }
+
+  private backToHome() {
+    setInterval(() => {
+      this.router.navigateByUrl('');
+    }, 1500);
   }
 
 }

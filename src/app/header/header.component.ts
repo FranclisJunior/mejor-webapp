@@ -1,6 +1,6 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {UtilService} from "../util/utl.service";
+import {UtilService} from "../util/util.service";
 
 @Component({
   selector: 'app-header',

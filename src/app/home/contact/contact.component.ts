@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ToastsManager} from 'ng2-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -9,16 +10,17 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class ContactComponent implements OnInit {
 
   contact: any = {};
-
   contactForm: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(public toastr: ToastsManager, vcr: ViewContainerRef, fb: FormBuilder) {
     this.contactForm = fb.group({
       'name': ['', Validators.compose([Validators.required, Validators.minLength(5)])],
       'email': ['', Validators.compose([Validators.required, Validators.email])],
       'phone': '',
       'message': ['', Validators.required]
     });
+
+    this.toastr.setRootViewContainerRef(vcr);
   }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class ContactComponent implements OnInit {
 
   sendEmail() {
     // TODO
+    this.toastr.info('Not Implemented');
   }
 
 }

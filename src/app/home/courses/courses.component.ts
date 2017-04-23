@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {UtilService} from '../../util/utl.service';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {UtilService} from '../../util/util.service';
 import {CoursesService} from './courses.service';
 import {Router} from '@angular/router';
+import {ToastsManager} from 'ng2-toastr';
 
 @Component({
   selector: 'app-courses',
@@ -16,10 +17,12 @@ export class CoursesComponent implements OnInit {
 
   courses: Array<any>;
 
-  constructor(utilService: UtilService, coursesService: CoursesService, router: Router) {
+  constructor(utilService: UtilService, coursesService: CoursesService, router: Router, public toastr: ToastsManager,
+              vcr: ViewContainerRef) {
     this.utilService = utilService;
     this.coursesService = coursesService;
     this.router = router;
+    this.toastr.setRootViewContainerRef(vcr);
   }
 
   ngOnInit() {
@@ -50,7 +53,7 @@ export class CoursesComponent implements OnInit {
           }
         },
         error => {
-          console.log(error);
+          this.toastr.error(error, 'Error');
         }
       );
   }

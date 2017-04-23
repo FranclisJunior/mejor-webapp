@@ -14,6 +14,8 @@
   "COURSE_ADVANTAGE": "Vantagem",
   "BUY_COURSE": "Comprar Curso",
   "SELECT_COURSE": "Selecione o Curso",
+  "THANK_YOU": "Obrigado {{client}}, verifique seu email para ter mais detalhes da sua compra.",
+
 
   "NAME": "Name",
   "EMAIL": "Email",

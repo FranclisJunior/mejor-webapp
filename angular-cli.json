@@ -19,6 +19,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
+        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css",
         "../bower_components/bootstrap/dist/css/bootstrap.css",
         "../bower_components/font-awesome/css/font-awesome.css"
       ],
